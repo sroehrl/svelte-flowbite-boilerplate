@@ -1,5 +1,5 @@
 
-# REtech svelte kit app starter
+# REtech svelte kit app starter / boilerplate
 
 - typescript
 - flowbite
@@ -9,3 +9,7 @@
 ## Creating a project
 
 Use the template button on github to start a new project
+
+### Preview
+
+[github pages](https://sroehrl.github.io/svelte-flowbite-boilerplate)
