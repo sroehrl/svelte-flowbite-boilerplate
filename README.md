@@ -8,4 +8,4 @@
 
 ## Creating a project
 
-If you're seeing this, you've probably already done this step. Congrats!
+Use the template button on github to start a new project
