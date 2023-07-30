@@ -3,7 +3,7 @@
   import {DarkMode, Navbar, NavBrand, NavHamburger, NavLi, NavUl} from "flowbite-svelte";
 </script>
 <Navbar let:hidden let:toggle>
-    <NavBrand href="/">
+    <NavBrand >
         <DarkMode/>
         <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white pl-3">
       Svelte kit / Flowbite - starter
