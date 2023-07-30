@@ -23,14 +23,16 @@ concurrency:
 
 jobs:
   build:
-  - uses: actions/checkout@v1
-  - name: Use Node.js ${{ matrix.node-version }}
-    uses: actions/setup-node@v1
-    with:
-      node-version: ${{ matrix.node-version }}
-  - name: npm install and npm test
-    run: |
-      npm run build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: 16.x
+    - name: npm install and npm test
+      run: |
+        npm run build
   # Single deploy job since we're just deploying
   deploy:
     environment:
