@@ -32,6 +32,7 @@ jobs:
         node-version: 16.x
     - name: npm install and npm test
       run: |
+        npm i
         npm run build
   # Single deploy job since we're just deploying
   deploy:
