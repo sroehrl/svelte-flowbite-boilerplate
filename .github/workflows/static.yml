@@ -30,12 +30,18 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 16.x
+    - name: create env file
+      run: |
+        touch .env
+        echo PUBLIC_API_PATH=https://api.celest.services/api >> .env
     - name: npm install and npm test
       run: |
         npm i
         npm run build
   # Single deploy job since we're just deploying
   deploy:
+    needs: [build]
+    if: ${{ always() && !cancelled() && needs.build.result == 'success' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
