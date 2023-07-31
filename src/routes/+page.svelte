@@ -20,7 +20,7 @@
 
     <div class="flex gap-3">
         <div>
-            <Listgroup active items={links} let:item class="w-44">
+            <Listgroup active items={links} let:item class="w-28 md:w-44">
                 {item.name}
             </Listgroup>
         </div>
@@ -61,14 +61,17 @@
 </article>
 {#each Object.entries(colors) as [name, color]}
     <h2 class="capitalize text-lg my-1 dark:text-white">{name}</h2>
-    <div class="flex gap-3">
-        {#each shades as shade}
-            <div class="w-32 h-32 p-3 bg-{name}-{shade}">
-                {shade} <br>
-                <p class="text-xs text-gray-500 bg-gray-200/50 rounded px-1">.bg-{name}-{shade}</p>
-            </div>
-        {/each}
+    <div class="w-full overflow-x-auto">
+        <div class="flex gap-3">
+            {#each shades as shade}
+                <div class="w-32 h-32 p-3 bg-{name}-{shade}">
+                    {shade} <br>
+                    <p class="text-xs text-gray-500 bg-gray-200/50 rounded px-1">.bg-{name}-{shade}</p>
+                </div>
+            {/each}
+        </div>
     </div>
+
 {/each}
 <article id="icons" class="format lg:format-lg dark:format-invert w-full mt-5 mb-5">
     <h2>Icons</h2>
