@@ -1,7 +1,7 @@
 {
   "short_name": "retech-app",
   "name": "CELEST retech boilerplate app",
-  "start_url": "/",
+  "start_url": "https://sroehrl.github.io/svelte-flowbite-boilerplate/",
   "icons": [
     {
       "src": "icon-512x512.png",
@@ -14,10 +14,10 @@
       "sizes": "192x192"
     }
   ],
-  "background_color": "#3367D6",
+  "background_color": "#546dd2",
   "display": "standalone",
   "scope": "/",
-  "theme_color": "#3367D6",
+  "theme_color": "#546dd2",
   "shortcuts": [],
   "description": "Edit this information in static/maifest.json"
 }
