@@ -7,6 +7,11 @@
       "src": "icon-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
     }
   ],
   "background_color": "#3367D6",
