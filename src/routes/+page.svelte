@@ -2,7 +2,8 @@
     import {Alert, Listgroup, Button, ButtonGroup, Tooltip } from 'flowbite-svelte'
     import * as icons from 'flowbite-svelte-icons'
     import colors from '$lib/colors.js'
-    import {get} from "$lib/api";
+    import dayjs from "dayjs";
+    import {i18nDateFormat, Language} from "$lib/utils/i18nDate";
 
     const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]
 
@@ -13,19 +14,22 @@
         {name: "API", href: "#api"},
     ];
 
-
+    let dateFormat = i18nDateFormat(Language[navigator.language.substring(0,2)])
 </script>
-<div class="border rounded p-5">
+<div class="border shadow shadow-gray-500/50 rounded p-5">
 
     <div class="flex gap-3">
-        <Listgroup active items={links} let:item class="w-44">
-            {item.name}
-        </Listgroup>
+        <div>
+            <Listgroup active items={links} let:item class="w-44">
+                {item.name}
+            </Listgroup>
+        </div>
+
         <article class="format lg:format-lg dark:format-invert ">
             <h1>REtech starter kit</h1>
             <p class="lead">This template is meant to jump start svelte kit app development with customization in mind</p>
             <p>The package includes a complete setup of svelte-flowbite, flowbite-icons, functional utilities, and customization functionality.</p>
-
+            <p>System time: {dayjs().format(dateFormat)}</p>
         </article>
     </div>
 

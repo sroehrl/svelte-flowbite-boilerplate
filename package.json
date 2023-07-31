@@ -28,6 +28,7 @@
     "@popperjs/core": "^2.11.8",
     "@sveltejs/adapter-static": "^2.0.3",
     "classnames": "^2.3.2",
+    "dayjs": "^1.11.9",
     "flowbite": "^1.8.0",
     "flowbite-svelte": "^0.40.2",
     "flowbite-svelte-icons": "^0.2.6",
