@@ -2,17 +2,18 @@
   import "../app.postcss";
   import {DarkMode, Navbar, NavBrand, NavHamburger, NavLi, NavUl} from "flowbite-svelte";
   import {page} from "$app/stores";
+  import {base} from "$app/paths";
 </script>
 <Navbar let:hidden let:toggle>
     <NavBrand>
         <DarkMode/>
         <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white pl-3">
-      <a href="/">Svelte kit / Flowbite - starter</a>
+      <a href="/">Svelte kit / Flowbite - starter </a>
     </span>
     </NavBrand>
     <NavHamburger on:click={toggle} />
     <NavUl {hidden}>
-        <NavLi href="docs" active={$page.url.pathname == "/docs"}>DOCS</NavLi>
+        <NavLi href="docs" active={$page.url.pathname === {base} + "/docs"}>DOCS</NavLi>
         <NavLi href="https://retech-software.de" >RETECH</NavLi>
     </NavUl>
 </Navbar>
