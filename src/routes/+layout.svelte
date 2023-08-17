@@ -8,7 +8,7 @@
     <NavBrand>
         <DarkMode/>
         <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white pl-3">
-      <a href="/">Svelte kit / Flowbite - starter </a>
+      <a href={base}>Svelte kit / Flowbite - starter </a>
     </span>
     </NavBrand>
     <NavHamburger on:click={toggle} />
