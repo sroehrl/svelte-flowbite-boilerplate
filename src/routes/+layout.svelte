@@ -13,7 +13,7 @@
     </NavBrand>
     <NavHamburger on:click={toggle} />
     <NavUl {hidden}>
-        <NavLi href="docs" active={$page.url.pathname === {base} + "/docs"}>DOCS</NavLi>
+        <NavLi href="docs" active={$page.url.pathname.endsWith('docs')}>DOCS</NavLi>
         <NavLi href="https://retech-software.de" >RETECH</NavLi>
     </NavUl>
 </Navbar>
