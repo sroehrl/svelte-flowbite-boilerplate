@@ -1,6 +1,6 @@
 <script>
-    import {Alert, Listgroup, Button, ButtonGroup, Tooltip } from 'flowbite-svelte'
-    import * as icons from 'flowbite-svelte-icons'
+    import {Alert, Listgroup, Button, ButtonGroup, Tooltip, Modal, Input, Search} from 'flowbite-svelte'
+    import {Icon, icons} from 'flowbite-svelte-icons'
     import colors from '$lib/colors.js'
     import dayjs from "dayjs";
     import {i18nDateFormat, Language} from "$lib/utils/i18nDate";
@@ -15,7 +15,18 @@
     ];
 
     let dateFormat = i18nDateFormat(Language[navigator.language.substring(0,2)])
+
+    let showCopied = false;
+    let iconSearch = "";
+    function copy(key) {
+        showCopied = true;
+        navigator.clipboard.writeText('<Icon name="' + key + '"/>');
+        setTimeout(() => {
+            showCopied = false;
+        }, 2000)
+    }
 </script>
+
 <div class="border shadow shadow-gray-500/50 rounded p-5">
 
     <div class="flex gap-3">
@@ -82,19 +93,24 @@
 
     </p>
     <code>
-        import &#123;AtomSolid&#125; from 'flowbite-svelte-icons'
+        import &#123;Icon&#125; from 'flowbite-svelte-icons'
     </code>
 
 
 </article>
-<div class="grid grid-cols-10 gap-x-3 gap-y-5 text-neutral-400 dark:text-white">
-    {#each Object.keys(icons) as key}
-        <div class="hover:text-primary-400">
-            <svelte:component this={icons[key]} size="lg" ></svelte:component>
-            <Tooltip>&lt;{key}/&gt;</Tooltip>
+<div class="mb-3">
+    <Search bind:value={iconSearch} />
+</div>
+<div class="grid grid-cols-6 gap-x-3 gap-y-5 text-neutral-400 dark:text-white relative max-h-[600px] overflow-y-auto">
+    {#each Object.keys(icons).filter(icon => iconSearch === "" || icon.toLowerCase().includes(iconSearch.toLowerCase())) as key}
+        <div class="hover:text-primary-400" on:click={() => copy(key)}>
+            <Icon name={key} size="lg" />
+            <div class="text-xs">{key}</div>
+            <Tooltip placement="bottom">&lt;Icon name="{key}"/&gt;</Tooltip>
         </div>
 
     {/each}
+    <Modal title="Copied!" bind:open={showCopied}>Copied to clipboard</Modal>
 </div>
 <article id="api" class="format lg:format-lg dark:format-invert w-full mt-5 mb-5">
     <h2>API</h2>

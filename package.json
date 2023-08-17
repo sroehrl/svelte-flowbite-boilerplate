@@ -31,7 +31,7 @@
     "dayjs": "^1.11.9",
     "flowbite": "^1.8.0",
     "flowbite-svelte": "^0.40.2",
-    "flowbite-svelte-icons": "^0.2.6",
+    "flowbite-svelte-icons": "^0.3.6",
     "flowbite-typography": "^1.0.3",
     "tailwind-merge": "^1.14.0",
     "values.js": "^2.1.1"
