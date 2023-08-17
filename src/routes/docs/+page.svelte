@@ -1,5 +1,16 @@
 <script>
-    import {Alert, Listgroup, Button, ButtonGroup, Tooltip, Modal, Input, Search} from 'flowbite-svelte'
+    import {
+        Alert,
+        Listgroup,
+        Button,
+        ButtonGroup,
+        Tooltip,
+        Modal,
+        Input,
+        Search,
+        Accordion,
+        AccordionItem
+    } from 'flowbite-svelte'
     import {Icon, icons} from 'flowbite-svelte-icons'
     import colors from '$lib/colors.js'
     import dayjs from "dayjs";
@@ -8,6 +19,7 @@
     const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]
 
     let links = [
+        {name: "Setup", href: "#setup"},
         {name: "Resources", href: "#resources"},
         {name: "Colors", href: "#colors"},
         {name: "Icons", href: "#icons"},
@@ -45,6 +57,42 @@
     </div>
 
 </div>
+
+<article id="setup" class="format lg:format-lg dark:format-invert mt-5 mb-3">
+    <h2>Setup</h2>
+    <p>Locally, this package runs out of the box, but you might want to go through the following checklist:</p>
+
+</article>
+<Accordion>
+    <AccordionItem>
+        <span slot="header">1. Create .env</span>
+        <p>
+            In order to set up the REST-API, copy example.env into .env <br>
+            .env.production and .env.development can be used for different environments
+        </p>
+    </AccordionItem>
+    <AccordionItem>
+        <span slot="header">2. Setup <code>src/lib/colors.js</code></span>
+        <p>
+            The values of the color generator can be found in src/lib/colors.js. <br>
+            Change, create, overwrite any hex-values you need
+        </p>
+    </AccordionItem>
+    <AccordionItem>
+        <span slot="header">3. Change base in <code>svelte.config.js</code></span>
+        <p>
+            Running on github pages or another subdirectory of a TLD? <br>
+            Make sure to set your base accordingly.
+        </p>
+    </AccordionItem>
+    <AccordionItem>
+        <span slot="header">4. Install</span>
+        <p>
+            run <code>yarn</code> <br>
+            run <code>yarn dev</code>
+        </p>
+    </AccordionItem>
+</Accordion>
 
 <article id="resources" class="format lg:format-lg dark:format-invert w-full mt-5 mb-2">
     <h2>Resources</h2>
