@@ -48,10 +48,11 @@ fs.writeFileSync(
 // install preferring yarn
 let command = 'yarn dev';
 if(commandExists.sync('yarn')) {
-    spawn.sync('yarn', ['install'], { stdio: 'inherit' });
+    spawn.sync('yarn', ['install'], { stdio: 'inherit', cwd: projectDir });
 } else {
     command = 'npm run dev';
-    spawn.sync('npm', ['install'], { stdio: 'inherit' });
+    spawn.sync('npm', ['install'], { stdio: 'inherit', cwd: projectDir });
 }
 console.log('Installation complete.');
+console.log('Navigate: "cd ' + folder + '"');
 console.log('You can now start the app with: "' + command + '"');
