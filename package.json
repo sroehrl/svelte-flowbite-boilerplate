@@ -27,9 +27,8 @@
     "tailwindcss": "^3.3.2",
     "tslib": "^2.4.1",
     "typescript": "^5.0.0",
-    "vite": "^4.4.2",
-    "cross-spawn": "^7.0.3",
-    "command-exists": "^1.2.9"
+    "vite": "^4.4.2"
+
   },
   "type": "module",
   "dependencies": {
@@ -43,6 +42,8 @@
     "flowbite-svelte-icons": "^0.3.6",
     "flowbite-typography": "^1.0.3",
     "tailwind-merge": "^1.14.0",
-    "values.js": "^2.1.1"
+    "values.js": "^2.1.1",
+    "cross-spawn": "^7.0.3",
+    "command-exists": "^1.2.9"
   }
 }
