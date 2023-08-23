@@ -1,6 +1,6 @@
 {
   "name": "svelte-flowbite-boilerplate",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "private": false,
   "scripts": {
     "dev": "vite dev",
@@ -13,6 +13,7 @@
     "url": "https://neoan.us",
     "name": "Neoan"
   },
+  "license": "MIT",
   "bin": {
     "svelte-flowbite-boilerplate": "bin/index.cjs"
   },

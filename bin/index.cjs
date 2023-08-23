@@ -4,7 +4,14 @@ const spawn = require('cross-spawn');
 const fs = require('fs');
 const path = require('path');
 const commandExists = require('command-exists');
+
+if(process.argv.length < 3) {
+    console.log('Usage: ' + process.argv[0] + ' <folder>');
+    process.exit(1);
+}
+
 const folder = process.argv[2];
+
 
 // create folder
 const currentDir = process.cwd();
@@ -15,7 +22,7 @@ fs.mkdirSync(projectDir, { recursive: true });
 fs.cpSync(path.resolve(__dirname, '..'), projectDir, { recursive: true });
 
 // delete installer
-fs.rmdirSync(path.join(projectDir, 'bin'), { recursive: true });
+fs.rmSync(path.join(projectDir, 'bin'), { recursive: true });
 
 // create .env file(s)
 fs.writeFileSync(path.join(projectDir, '.env.development'), 'PUBLIC_API_PATH=http://localhost:8080/api');
@@ -29,6 +36,14 @@ fs.writeFileSync(
     path.join(projectDir, 'package.json'),
     JSON.stringify(projectPackageJson, null, 2)
 );
+
+// update svelte.config.js
+const svelteConfig = fs.readFileSync(path.join(projectDir, 'svelte.config.js'));
+fs.writeFileSync(
+    path.join(projectDir, 'svelte.config.js'),
+    svelteConfig.toString().replace(/\/svelte-flowbite-boilerplate/, `/${folder}`)
+)
+
 
 // install preferring yarn
 let command = 'yarn dev';
