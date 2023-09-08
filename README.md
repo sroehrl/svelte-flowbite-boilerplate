@@ -3,6 +3,10 @@
 
 Quick start for a svelte PWA powered by flowbite
 
+### Preview
+
+[@ github pages](https://sroehrl.github.io/svelte-flowbite-boilerplate)
+
 ### includes
 - typescript
 - flowbite
@@ -31,6 +35,4 @@ Use the template button at https://github.com/sroehrl/svelte-flowbite-boilerplat
 This package contains GitHub actions to automatically deploy your app on GitHub pages. To activate, simply go to "Settings > Pages"
 and use "GitHub Actions" as your source.
 
-### Preview
 
-[github pages](https://sroehrl.github.io/svelte-flowbite-boilerplate)

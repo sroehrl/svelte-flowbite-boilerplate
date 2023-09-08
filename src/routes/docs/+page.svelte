@@ -9,7 +9,7 @@
         Input,
         Search,
         Accordion,
-        AccordionItem
+        AccordionItem, Card
     } from 'flowbite-svelte'
     import {Icon, icons} from 'flowbite-svelte-icons'
     import colors from '$lib/colors.js'
@@ -39,24 +39,24 @@
     }
 </script>
 
-<div class="border shadow shadow-gray-500/50 rounded p-5">
+<Card class="min-w-full">
 
-    <div class="flex gap-3">
-        <div>
-            <Listgroup active items={links} let:item class="w-28 md:w-44">
-                {item.name}
-            </Listgroup>
-        </div>
-
-        <article class="format lg:format-lg dark:format-invert ">
-            <h1>REtech starter kit</h1>
-            <p class="lead">This template is meant to jump start svelte kit app development with customization in mind</p>
-            <p>The package includes a complete setup of svelte-flowbite, flowbite-icons, functional utilities, and customization functionality.</p>
-            <p>System time: {dayjs().format(dateFormat)}</p>
-        </article>
+    <article class="format lg:format-lg dark:format-invert ">
+        <h1>REtech starter kit</h1>
+        <p class="lead">This template is meant to jump start svelte kit app development with customization in mind</p>
+        <p>The package includes a complete setup of svelte-flowbite, flowbite-icons, functional utilities, and customization functionality.</p>
+        <p>System time: {dayjs().format(dateFormat)}</p>
+    </article>
+    <div class="text-center">
+        <ButtonGroup>
+            {#each links as link}
+                <Button href={link.href}>{link.name}</Button>
+            {/each}
+        </ButtonGroup>
     </div>
 
-</div>
+
+</Card>
 
 <article id="setup" class="format lg:format-lg dark:format-invert mt-5 mb-3">
     <h2>Setup</h2>
@@ -86,13 +86,24 @@
         </p>
     </AccordionItem>
     <AccordionItem>
-        <span slot="header">4. Install</span>
+        <span slot="header">4. Make changes to <code>static/manifest.json</code></span>
+        <p>
+            In order for your PWA to work, make sure the start_url and scope is set correctly. As an example: If deploying to Github pages,
+            the start_url should be <code>https://[your-username-or-org].github.io/[your-repo-name]</code>
+            and the scope should be <code>/[your-repo-name]/</code>.
+        </p>
+    </AccordionItem>
+    <AccordionItem>
+        <span slot="header">5. Install</span>
         <p>
             run <code>yarn</code> <br>
             run <code>yarn dev</code>
         </p>
     </AccordionItem>
 </Accordion>
+<div class="my-5">
+    <Alert>If you install via npx, some of these steps have already been automatically done. However, in order to adapt to your needs, use this checklist to verify things are set up for you.</Alert>
+</div>
 
 <article id="resources" class="format lg:format-lg dark:format-invert w-full mt-5 mb-2">
     <h2>Resources</h2>

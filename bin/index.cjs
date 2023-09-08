@@ -44,6 +44,14 @@ fs.writeFileSync(
     svelteConfig.toString().replace(/\/svelte-flowbite-boilerplate/, `/${folder}`)
 )
 
+// update manifest.json
+let manifestPath = path.join(projectDir, 'static', 'manifest.json');
+const manifest = require(manifestPath);
+manifest.short_name = folder;
+manifest.name = folder;
+manifest.scope = `/${folder}/`;
+fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
+
 
 // install preferring yarn
 let command = 'yarn dev';
