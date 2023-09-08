@@ -111,7 +111,7 @@
 </article>
 <ButtonGroup>
     <Button href="https://flowbite.com/docs" target="_blank">Flowbite</Button>
-    <Button href="https://flowbite-svelte.com/docs/introduction" target="_blank">Flowbite svelte</Button>
+    <Button href="https://flowbite-svelte.com/docs/pages/introduction" target="_blank">Flowbite svelte</Button>
     <Button href="https://flowbite.com/icons/" target="_blank">Flowbite icons</Button>
     <Button href="https://kit.svelte.dev/docs" target="_blank">Svelte Kit</Button>
 </ButtonGroup>
