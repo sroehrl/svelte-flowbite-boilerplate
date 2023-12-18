@@ -1,14 +1,13 @@
-<script>
-    import {Icon} from "flowbite-svelte-icons";
+<script lang="ts">
+    import {ClipboardOutline} from "flowbite-svelte-icons";
     import {Toast} from "flowbite-svelte";
 
-    export let textToCopy;
+    export let textToCopy:string;
 
     export let size = "md";
 
     let open = false;
-    function copy(key) {
-
+    function copy() {
         open = true;
         navigator.clipboard.writeText(textToCopy);
         setTimeout(() => {
@@ -17,9 +16,9 @@
     }
 </script>
 
-<div class="cursor-pointer" on:click={copy} on:keydown={e => e.key === "Enter" && copy}>
+<div class="cursor-pointer" role="button" tabindex="0" on:click={copy} on:keydown={e => e.key === "Enter" && copy}>
     <slot>
-        <Icon size={size} name="clipboard-outline" class="text-primary-400 text-inherit"/>
+        <ClipboardOutline size={size} class="text-primary-400 text-inherit"/>
     </slot>
 </div>
 <div class="absolute">

@@ -1,0 +1,9 @@
+{
+  "test": "Test",
+  "myLanguage": "Deutsch",
+  "docs": {
+    "i18n": {
+      "demo": "Hier ist deutscher Text"
+    }
+  }
+}

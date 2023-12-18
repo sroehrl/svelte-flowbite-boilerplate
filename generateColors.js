@@ -1,4 +1,4 @@
-import colors from './src/lib/colors.js'
+import colors from './src/lib/_setup/colors.js'
 import Values from 'values.js'
 
 export default function generateColors(){
