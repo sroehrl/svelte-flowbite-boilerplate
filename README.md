@@ -3,9 +3,11 @@
 
 Quick start for a svelte PWA powered by flowbite
 
+## Now using svelte kit 2!!
+
 ### Preview
 
-[@ github pages](https://sroehrl.github.io/svelte-flowbite-boilerplate)
+[visit @ github pages](https://sroehrl.github.io/svelte-flowbite-boilerplate)
 
 ### includes
 - typescript
@@ -13,8 +15,11 @@ Quick start for a svelte PWA powered by flowbite
 - tailwind
 - flowbite icons
 - color palette generator
+- i18n translations & format handling
 - dayjs
 - external API for REST backend (we recommend https://lenkrad.neoan3.rocks)
+- additional components & tools
+- ...
 
 ## Creating a project using `npx`
 
