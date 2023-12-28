@@ -11,7 +11,7 @@
     } from "flowbite-svelte-icons";
 </script>
 
-<div class="w-4/5 lg:max-w-screen-lg mx-auto">
+<div class="w-4/5 lg:max-w-screen-lg mx-auto mb-24">
     <section >
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
 
@@ -87,7 +87,7 @@
     </section>
 </div>
 
-<Banner position="absolute" bannerType="bottom">
+<Banner position="fixed" bannerType="bottom">
     <div class="dark:text-white">
         <a href="https://github.com/sroehrl/svelte-flowbite-boilerplate/blob/main/LICENSE">Yes, you can use it! (open source / MIT)</a>
     </div>
