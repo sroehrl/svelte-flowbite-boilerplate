@@ -2,13 +2,18 @@
 import * as Icons from "flowbite-svelte-icons";
 import {Button, ButtonGroup, Dropdown, DropdownItem, Input, Search, Tooltip} from "flowbite-svelte";
 import CopyToClipboard from "$lib/components/CopyToClipboard.svelte";
-import {ChevronDownSolid} from "flowbite-svelte-icons";
+import {CaretDownSolid} from "flowbite-svelte-icons";
 
-export let id = "icons";
+ let {id} = $props();
+let iconSearch = $state('');
+let iconClasses = $state('w-6 h-6');
+let iconType = $state('All')
+let filteredIcons = $state(Object.keys(Icons).filter((key) => iconType === 'All' || key.endsWith(iconType)));
 
-let iconSearch = '';
-let iconClasses = 'w-6 h-6';
-let iconType = 'All'
+$effect(() => {
+
+    filteredIcons = Object.keys(Icons).filter((key) => iconType === 'All' || key.endsWith(iconType)).filter((key) => key.toLowerCase().includes(iconSearch.toLowerCase()));
+})
 
 </script>
 
@@ -28,8 +33,8 @@ let iconType = 'All'
 </article>
 <div class="mb-5">
     <ButtonGroup class="w-full">
-        <Button color="none" class="flex-shrink-0 text-gray-900 bg-gray-100 border border-gray-300 dark:border-gray-700 dark:text-white hover:bg-gray-200 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-            {iconType}<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" />
+        <Button color="none" class="flex-shrink-0 min-w-28 text-gray-900 bg-gray-100 border border-gray-300 dark:border-gray-700 dark:text-white hover:bg-gray-200 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+            {iconType}<CaretDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" />
         </Button>
         <Dropdown>
             <DropdownItem on:click={() => iconType = 'All'}>All</DropdownItem>
@@ -42,7 +47,7 @@ let iconType = 'All'
 </div>
 <div class="grid grid-cols-6 gap-x-3 gap-y-5 text-neutral-400 dark:text-white relative max-h-[600px] overflow-y-auto">
 
-    {#each Object.keys(Icons).filter(icon => iconType === 'All' || iconType === 'Solid' && icon.endsWith(iconType)).filter(icon => iconSearch === "" || icon.toLowerCase().includes(iconSearch.toLowerCase())) as key}
+    {#each filteredIcons as key}
         {#if !key.startsWith('Icon')}
         <CopyToClipboard textToCopy="&lt;{key} class=&quot;{iconClasses}&quot;/&gt;">
             <div class="hover:text-primary-400 grid gap-2 place-items-center" >

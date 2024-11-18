@@ -3,7 +3,7 @@
 
 Quick start for a svelte PWA powered by flowbite
 
-## Now using svelte kit 2!!
+## Svelte kit 2 & Svelte 5!!
 
 ### Preview
 

@@ -26,6 +26,7 @@
         )
     </code>
     <table>
+        <tbody>
         <tr>
             <th>Method</th>
             <th>Description</th>
@@ -50,5 +51,7 @@
             <td>formDataPost(url: string, formData: object)</td>
             <td>Sends a POST-request with FormData to PUBLIC_API_PATH + "url"</td>
         </tr>
+        </tbody>
+
     </table>
 </article>

@@ -1,4 +1,3 @@
-import {SvelteComponent} from "svelte";
 
 const components: any = {
 

@@ -2,11 +2,11 @@
     import {ClipboardOutline} from "flowbite-svelte-icons";
     import {Toast} from "flowbite-svelte";
 
-    export let textToCopy:string;
 
-    export let size = "md";
 
-    let open = false;
+    let {size, textToCopy} = $props();
+
+    let open = $state(false);
     function copy() {
         open = true;
         navigator.clipboard.writeText(textToCopy);
@@ -22,8 +22,10 @@
     </slot>
 </div>
 <div class="absolute">
-    <Toast bind:open>
+    {#if open}
+    <Toast>
         <span class="font-semibold">{textToCopy}</span> has been copied to your clipboard
     </Toast>
+    {/if}
 </div>
 

@@ -1,8 +1,8 @@
 <script>
   import "../app.postcss";
-  import {DarkMode, Navbar, NavBrand, NavHamburger, NavLi, NavUl} from "flowbite-svelte";
   import {page} from "$app/stores";
   import {base} from "$app/paths";
+  import {DarkMode, Navbar, NavBrand, NavHamburger, NavLi, NavUl} from "flowbite-svelte";
   import {GithubSolid} from "flowbite-svelte-icons";
   import ReusableModal from "$lib/components/ReusableModal.svelte";
 </script>

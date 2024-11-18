@@ -25,18 +25,21 @@ $modalStore.registerConfig({
     </p>
     <h3>CopyToClipboard</h3>
     <table>
-        <tr>
-            <th>Prop</th>
-            <th>Type</th>
-        </tr>
-        <tr>
-            <td>textToCopy</td>
-            <td>string</td>
-        </tr>
-        <tr>
-            <td>size</td>
-            <td>string ("xs", "sm", "md", "lg")</td>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Prop</th>
+                <th>Type</th>
+            </tr>
+            <tr>
+                <td>textToCopy</td>
+                <td>string</td>
+            </tr>
+            <tr>
+                <td>size</td>
+                <td>string ("xs", "sm", "md", "lg")</td>
+            </tr>
+        </tbody>
+
     </table>
     <p>If you don't want the default Icon to display, filling the slot is required.</p>
 
@@ -76,6 +79,7 @@ $modalStore.registerConfig({
 <article class="format lg:format-lg dark:format-invert w-full mt-5 mb-3">
     <h4>Configuration</h4>
     <table class="w-full">
+        <tbody>
         <tr>
             <th>Property</th>
             <th>Type</th>
@@ -111,9 +115,13 @@ $modalStore.registerConfig({
             <td>string</td>
             <td>'xs' | 'sm' | 'md' | 'lg' | 'xl'</td>
         </tr>
+        </tbody>
+
     </table>
     <h4>Methods</h4>
     <table class="w-full">
+        <tbody>
+
         <tr>
             <th>Method</th>
             <th>Description</th>
@@ -126,6 +134,7 @@ $modalStore.registerConfig({
             <td>registerConfig(config: ModalConfig)</td>
             <td>Updates the modal configuration.</td>
         </tr>
+        </tbody>
 
     </table>
 
