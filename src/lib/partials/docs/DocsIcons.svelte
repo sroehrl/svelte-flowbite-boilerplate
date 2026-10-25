@@ -32,26 +32,27 @@ $effect(() => {
 
 </article>
 <div class="mb-5">
-    <ButtonGroup class="w-full">
-        <Button color="none" class="flex-shrink-0 min-w-28 text-gray-900 bg-gray-100 border border-gray-300 dark:border-gray-700 dark:text-white hover:bg-gray-200 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+    <div class="flex">
+        <Button color="none" class="rounded-e-none flex-shrink-0 min-w-28 text-gray-900 bg-gray-100 border border-gray-300 dark:border-gray-700 dark:text-white hover:bg-gray-200 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
             {iconType}<CaretDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" />
         </Button>
-        <Dropdown>
-            <DropdownItem on:click={() => iconType = 'All'}>All</DropdownItem>
-            <DropdownItem on:click={() => iconType = 'Solid'}>Solid</DropdownItem>
-            <DropdownItem on:click={() => iconType = 'Outline'}>Outline</DropdownItem>
+        <Dropdown simple>
+            <DropdownItem onclick={() => iconType = 'All'}>All</DropdownItem>
+            <DropdownItem onclick={() => iconType = 'Solid'}>Solid</DropdownItem>
+            <DropdownItem onclick={() => iconType = 'Outline'}>Outline</DropdownItem>
         </Dropdown>
-        <Input class="w-1/4" bind:value={iconClasses}/>
-        <Search bind:value={iconSearch} />
-    </ButtonGroup>
+        <Input class="max-w-1/4 rounded-e-none rounded-s-none" bind:value={iconClasses}/>
+        <Search classes={{ input: "rounded-s-none py-2.5" }} bind:value={iconSearch} />
+    </div>
 </div>
 <div class="grid grid-cols-6 gap-x-3 gap-y-5 text-neutral-400 dark:text-white relative max-h-[600px] overflow-y-auto">
 
     {#each filteredIcons as key}
+        {@const IconComponent = Icons[key]}
         {#if !key.startsWith('Icon')}
         <CopyToClipboard textToCopy="&lt;{key} class=&quot;{iconClasses}&quot;/&gt;">
             <div class="hover:text-primary-400 grid gap-2 place-items-center" >
-                <svelte:component this={Icons[key]} class="{iconClasses}" />
+                <IconComponent class="{iconClasses}" />
                 <span class="text-xs">{key}</span>
                 <Tooltip placement="bottom">&lt;{key} class=&quot;{iconClasses}&quot;/&gt;</Tooltip>
             </div>

@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
 import colors from "$lib/_setup/colors.js";
 import {Alert} from "flowbite-svelte";
 
-export let id = "colors";
+let {id = 'colors'} = $props<{id: string}>()
 
 const shades = ["50", "100", "200", "300", "400", "500", "600", "700", "800", "900"];
 </script>
@@ -16,6 +16,7 @@ const shades = ["50", "100", "200", "300", "400", "500", "600", "700", "800", "9
         Make sure to familiarize yourself with flowbite-svelte to understand how to influence prop-colors by setting them.
         The primary name, for example, is used in many components.
     </p>
+    <p>After making changes to the colors.js file, run <code>yarn setup</code> (or <code>npm run setup</code>).</p>
 
 
     <Alert color="yellow">The value you specify is used for the shade "500"</Alert>

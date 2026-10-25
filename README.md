@@ -1,5 +1,5 @@
 
-# REtech svelte kit app starter / boilerplate
+# NEOAN svelte kit app starter / boilerplate
 
 Quick start for a svelte PWA powered by flowbite
 
@@ -23,8 +23,8 @@ Quick start for a svelte PWA powered by flowbite
 
 ## Creating a project using `npx`
 
-- `npx svelte-flowbite-boilerplate@latest <project-name>`
-- check deployment base in `svelte.config.js`
+- `npx svelte-flowbite-boilerplate@latest <project-name> <static|node>`
+- check deployment base in `vite.config.ts`
 
 ## Creating a project using github's repository template
 
@@ -32,7 +32,7 @@ Use the template button at https://github.com/sroehrl/svelte-flowbite-boilerplat
 
 - create .env (or .env.development, .env.deployment)
 - setup src/lib/colors.js
-- change base in `svelte.config.js`
+- change base in `vite.config.ts`
 - run `yarn`
 - run `yarn dev`
 

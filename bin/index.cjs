@@ -5,9 +5,14 @@ const fs = require('fs');
 const path = require('path');
 const commandExists = require('command-exists');
 
+let mode = 'static';
+
 if(process.argv.length < 3) {
     console.log('Usage: ' + process.argv[0] + ' <folder>');
     process.exit(1);
+}
+if(typeof process.argv[3] !== 'undefined'){
+    mode = process.argv[3]
 }
 
 const folder = process.argv[2];
@@ -38,10 +43,12 @@ fs.writeFileSync(
 );
 
 // update svelte.config.js
-const svelteConfig = fs.readFileSync(path.join(projectDir, 'svelte.config.js'));
+const viteConfig = fs.readFileSync(path.join(projectDir, 'vite.config.ts'));
 fs.writeFileSync(
-    path.join(projectDir, 'svelte.config.js'),
-    svelteConfig.toString().replace(/\/svelte-flowbite-boilerplate/, `/${folder}`)
+    path.join(projectDir, 'vite.config.ts'),
+    viteConfig.toString()
+        .replace(/\/svelte-flowbite-boilerplate/, `/${folder}`)
+        .replace(/sveltejs\/adapter-static/, `sveltejs/adapter-${mode}`)
 )
 
 // update manifest.json

@@ -25,7 +25,6 @@ const getOptions = (method:string, payload = null) => {
     }
     if(bearer){
         obj.withCredentials = true;
-        // obj.credentials = 'include'
     }
 
     if(payload){

@@ -1,7 +1,7 @@
 <script lang="ts">
     import {Accordion, AccordionItem, Alert} from "flowbite-svelte";
 
-    export let id = "setup";
+    let {id = 'setup'} = $props<{id: string}>()
 </script>
 
 <article id={id} class="format lg:format-lg dark:format-invert mt-5 mb-3">
@@ -11,28 +11,28 @@
 </article>
 <Accordion>
     <AccordionItem>
-        <span slot="header">1. Create .env</span>
+        {#snippet header()}1. Create .env{/snippet}
         <p>
             In order to set up the REST-API, copy example.env into .env <br>
             .env.production and .env.development can be used for different environments
         </p>
     </AccordionItem>
     <AccordionItem>
-        <span slot="header">2. Setup <code>src/lib/_setup/colors.js</code></span>
+        {#snippet header()}2. Setup <code>src/lib/_setup/colors.js</code>{/snippet}
         <p>
             The values of the color generator can be found in src/lib/_setup/colors.js. <br>
-            Change, create, overwrite any hex-values you need
+            Change, create, overwrite any hex-values you need. Run <code>yarn setup</code> or <code>npm run setup</code> to generate palettes.
         </p>
     </AccordionItem>
     <AccordionItem>
-        <span slot="header">3. Change base in <code>svelte.config.js</code></span>
+        {#snippet header()}3. Change base in <code>vite.config.ts</code>{/snippet}
         <p>
             Running on github pages or another subdirectory of a TLD? <br>
             Make sure to set your base accordingly.
         </p>
     </AccordionItem>
     <AccordionItem>
-        <span slot="header">4. Make changes to <code>static/manifest.json</code></span>
+        {#snippet header()}4. Make changes to <code>static/manifest.json</code>{/snippet}
         <p>
             In order for your PWA to work, make sure the start_url and scope is set correctly. As an example: If deploying to Github pages,
             the start_url should be <code>https://[your-username-or-org].github.io/[your-repo-name]</code>
@@ -40,7 +40,7 @@
         </p>
     </AccordionItem>
     <AccordionItem>
-        <span slot="header">5. Install</span>
+        {#snippet header()}5. Install{/snippet}
         <p>
             run <code>yarn</code> <br>
             run <code>yarn dev</code>

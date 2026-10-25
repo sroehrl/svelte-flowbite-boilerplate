@@ -1,7 +1,7 @@
-import {browser} from "$app/environment";
+import {browser} from "$app/env";
 import '$lib/i18n/i18n'
 import { locale, waitLocale } from 'svelte-i18n'
-import type {LayoutLoad} from "../../.svelte-kit/types/src/routes/$types";
+import type {LayoutLoad} from "./$types";
 export const ssr = false;
 export const prerender = true;
 

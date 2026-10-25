@@ -1,7 +1,7 @@
 <script lang="ts">
     import {Button, ButtonGroup} from "flowbite-svelte";
 
-    export let id = "resources";
+    let {id = 'resources'} = $props<{id: string}>()
 </script>
 
 <article id={id} class="format lg:format-lg dark:format-invert w-full mt-5 mb-2">

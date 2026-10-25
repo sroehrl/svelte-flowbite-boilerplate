@@ -1,0 +1,108 @@
+@import "tailwindcss";
+@plugin 'flowbite/plugin';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme{
+ --color-primary-50: rgb(210,209,229);
+ --color-primary-100: rgb(193,192,219);
+ --color-primary-200: rgb(182,181,213);
+ --color-primary-300: rgb(170,170,206);
+ --color-primary-400: rgb(159,158,200);
+ --color-primary-500: rgb(142,141,190);
+ --color-primary-600: rgb(128,127,171);
+ --color-primary-700: rgb(107,106,143);
+ --color-primary-800: rgb(92,92,124);
+ --color-primary-900: rgb(71,71,95);
+ --color-secondary-50: rgb(221,244,249);
+ --color-secondary-100: rgb(208,240,246);
+ --color-secondary-200: rgb(199,237,245);
+ --color-secondary-300: rgb(191,235,243);
+ --color-secondary-400: rgb(182,232,241);
+ --color-secondary-500: rgb(169,228,239);
+ --color-secondary-600: rgb(152,205,215);
+ --color-secondary-700: rgb(127,171,179);
+ --color-secondary-800: rgb(110,148,155);
+ --color-secondary-900: rgb(85,114,120);
+ --color-mint-50: rgb(176,226,213);
+ --color-mint-100: rgb(147,215,197);
+ --color-mint-200: rgb(127,208,186);
+ --color-mint-300: rgb(107,201,176);
+ --color-mint-400: rgb(88,194,165);
+ --color-mint-500: rgb(58,183,149);
+ --color-mint-600: rgb(52,165,134);
+ --color-mint-700: rgb(44,137,112);
+ --color-mint-800: rgb(38,119,97);
+ --color-mint-900: rgb(29,92,75);
+ --color-moss-50: rgb(209,213,187);
+ --color-moss-100: rgb(191,197,162);
+ --color-moss-200: rgb(180,186,145);
+ --color-moss-300: rgb(168,176,128);
+ --color-moss-400: rgb(156,165,111);
+ --color-moss-500: rgb(139,149,86);
+ --color-moss-600: rgb(125,134,77);
+ --color-moss-700: rgb(104,112,65);
+ --color-moss-800: rgb(90,97,56);
+ --color-moss-900: rgb(70,75,43);
+ --color-red-50: rgb(248,196,184);
+ --color-red-100: rgb(246,174,157);
+ --color-red-200: rgb(244,159,139);
+ --color-red-300: rgb(242,145,122);
+ --color-red-400: rgb(241,130,104);
+ --color-red-500: rgb(238,108,77);
+ --color-red-600: rgb(214,97,69);
+ --color-red-700: rgb(179,81,58);
+ --color-red-800: rgb(155,70,50);
+ --color-red-900: rgb(119,54,39);
+}
+@source inline("bg-{primary,secondary,mint,moss,red}-{50,{100..900..100},950}");
+
+@source "../node_modules/flowbite-svelte/dist";
+@source "../node_modules/flowbite-svelte-icons/dist";
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.format{
+ article, section{
+  padding: 1rem;
+ }
+ h1, h2, h3, h4, h5, h6{
+  margin-bottom: 1rem;
+ }
+ h1{
+  @apply text-3xl font-bold;
+ }
+ h2 {
+  @apply text-2xl font-bold;
+ }
+ h3 {
+  @apply text-xl font-bold;
+ }
+ code{
+  background-color: #211f1f;
+  color: #fff;
+  @apply rounded-md px-1 whitespace-pre font-mono;
+ }
+ p{
+  margin-bottom: 1rem;
+  margin-top: .25rem;
+ }
+}

@@ -3,6 +3,7 @@
 import {modalStore} from "$lib/stores/modal";
 import DocsIcons from "$lib/partials/docs/DocsIcons.svelte";
     import {ExclamationCircleSolid} from "flowbite-svelte-icons";
+    import CopyToClipboard from "$lib/components/CopyToClipboard.svelte";
 
 $modalStore.registerConfig({
     component: DocsIcons,
@@ -50,6 +51,10 @@ $modalStore.registerConfig({
     &lt;CopyToClipboard textToCopy="some text"&gt; Click to copy &lt;/CopyToClipboard&gt;
 </pre>
 </code>
+<div class="bg-gray-100 p-3 mt-3 mb-5 relative">
+    <p class="absolute -top-5 left-0 text-primary-600">Demo</p>
+    <CopyToClipboard textToCopy="some text">Click to copy</CopyToClipboard>
+</div>
 <article class="format lg:format-lg dark:format-invert w-full mt-10 mb-3">
     <h3>ReusableModal</h3>
     <p>
@@ -72,10 +77,13 @@ $modalStore.registerConfig({
             size: "xl"
         {'}'})
     &lt;/script&gt;
-    &lt;Button on:click={'{$modalStore.toggle}'}&gt;show icons{'</Button>'}
+    &lt;Button onclick={'{$modalStore.toggle}'}&gt;show icons{'</Button>'}
 </pre>
 </code>
-<Button class="mt-5" on:click={$modalStore.toggle}>show icons</Button>
+<div class="bg-gray-100 p-3 mt-3 mb-5 relative">
+    <p class="absolute -top-5 left-0 text-primary-600">Demo</p>
+    <Button onclick={$modalStore.toggle}>show icons</Button>
+</div>
 <article class="format lg:format-lg dark:format-invert w-full mt-5 mb-3">
     <h4>Configuration</h4>
     <table class="w-full">

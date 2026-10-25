@@ -1,8 +1,14 @@
-import { build, files, version } from "$service-worker";
+import {immutable, assets, prerendered} from "$app/manifest";
+import { version } from '$app/env';
+import { self } from "$app/service-worker";
+import { resolve } from '$app/paths';
 
-const worker = self as unknown as ServiceWorkerGlobalScope;
 const STATIC_CACHE_NAME = `cache${version}`;
 const APP_CACHE_NAME = `offline${version}`;
+
+
+
+
 
 // hard-coded list of app routes we want to preemptively cache
 const routes = ["/"];
@@ -26,15 +32,15 @@ const addDomain = (assets: string[]) =>
 // also, we add the domain to our assets, so we can differentiate routes of our
 // app from those of other apps that we cache
 const ourAssets = addDomain([
-    ...files.filter((f) => !/\/icons\/(apple.*?|original.png)/.test(f)),
-    ...build,
-    ...routes,
+    ...immutable.map((asset) => resolve(asset.path)),
+    ...assets.map((asset) => resolve(asset.path)),
+    ...customAssets
 ]);
 
-const toCache = [...ourAssets, ...customAssets];
+const toCache = [...ourAssets];
 const staticAssets = new Set(toCache);
 
-worker.addEventListener("install", (event) => {
+self.addEventListener("install", (event) => {
     event.waitUntil(
         caches
             .open(STATIC_CACHE_NAME)
@@ -42,12 +48,12 @@ worker.addEventListener("install", (event) => {
                 return cache.addAll(toCache);
             })
             .then(() => {
-                worker.skipWaiting();
+                self.skipWaiting();
             })
     );
 });
 
-worker.addEventListener("activate", (event) => {
+self.addEventListener("activate", (event) => {
     event.waitUntil(
         caches.keys().then(async (keys) => {
             // delete old caches
@@ -57,7 +63,7 @@ worker.addEventListener("activate", (event) => {
                 }
             }
 
-            worker.clients.claim();
+            self.clients.claim();
         })
     );
 });
@@ -83,7 +89,7 @@ async function fetchAndCache(request: Request) {
     }
 }
 
-worker.addEventListener("fetch", (event) => {
+self.addEventListener("fetch", (event) => {
     if (event.request.method !== "GET" || event.request.headers.has("range")) {
         return;
     }
