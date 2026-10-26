@@ -60,7 +60,7 @@
             </SidebarGroup>
         </SidebarWrapper>
     </Sidebar>
-    <section class="overflow-auto px-4 md:ml-64 dark:text-white">
+    <section class="overflow-auto md:w-3/4 lg:w-1/2 px-4 md:ml-64 lg:ml-[500px] dark:text-white">
         <Card class="min-w-full format">
 
             <article >

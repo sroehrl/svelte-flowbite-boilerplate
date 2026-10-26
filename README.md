@@ -19,6 +19,7 @@ Quick start for a svelte PWA powered by flowbite
 - dayjs
 - external API for REST backend (we recommend https://lenkrad.neoan3.rocks)
 - additional components & tools
+- AGENTS.md file for your vibe-coding session
 - ...
 
 ## Creating a project using `npx`
