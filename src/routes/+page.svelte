@@ -41,6 +41,25 @@
             </div>
 
         </div>
+        <div class="mx-auto mb-12 grid max-w-screen-xl rounded-lg bg-gray-50 p-4 dark:bg-secondary-900 md:p-8 lg:grid-cols-12 lg:gap-8 lg:p-16 xl:gap-16">
+            <div class="lg:col-span-5 lg:mt-0">
+                <a href="#">
+                    <img class="mb-4 h-56 w-56 dark:hidden sm:h-96 sm:w-96 md:h-full md:w-full" src={resolve('/undraw_mobile-ux_5h2w.svg')} alt="peripherals" />
+                    <img class="mb-4 hidden dark:block md:h-full" src={resolve('/undraw_mobile-ux_5h2w.svg')} alt="peripherals" />
+                </a>
+            </div>
+            <div class="me-auto place-self-center lg:col-span-7">
+                <h1 class="mb-3 text-2xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white md:text-4xl">
+                    A clean, minimal starter for you sveltekit needs.
+                </h1>
+                <p class="mb-6 text-gray-500 dark:text-gray-200">
+                    Whether you are building a personal website, a blog, or a complex web application, this starter is a great place to start.
+                    Create your own Progressive Web App. Directly deploy to GitHub Pages. Build a full-stack application with a node backend.
+                    Craft your art in an easy structure or force your agent not to produce spaghetti code.
+                    <strong class="text-bold italic">Whatever it is, this makes live easier.</strong>
+                </p>
+            </div>
+        </div>
         <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
             <div>
                 <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
@@ -61,7 +80,7 @@
                     <CaretSortSolid class="text-white"/>
                 </div>
                 <h3 class="mb-2 text-xl font-bold dark:text-white">REST-ready</h3>
-                <p class="text-gray-500 dark:text-gray-400">Equipped with a simple axios-layer handling your requests when using external backends.</p>
+                <p class="text-gray-500 dark:text-gray-400">Equipped with wrappers for runtime & server-side fetch-calls handling your requests when using external backends.</p>
             </div>
             <div>
                 <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
