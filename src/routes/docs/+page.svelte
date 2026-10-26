@@ -28,7 +28,6 @@
     const hookComponent = async (name:string) => {
         FunctionComponent = null;
         FunctionComponent =  (await functional.load(name)).default;
-        console.log(FunctionComponent)
         await Sleep(100)
         if(!functionalInView){
             document.getElementById('functional')?.scrollIntoView({

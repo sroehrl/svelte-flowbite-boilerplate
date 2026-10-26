@@ -34,10 +34,9 @@ const addDomain = (assets: string[]) =>
 const ourAssets = addDomain([
     ...immutable.map((asset) => resolve(asset.path)),
     ...assets.map((asset) => resolve(asset.path)),
-    ...customAssets
 ]);
 
-const toCache = [...ourAssets];
+const toCache = [...ourAssets, ...customAssets];
 const staticAssets = new Set(toCache);
 
 self.addEventListener("install", (event) => {
