@@ -50,7 +50,7 @@
             </div>
             <div class="me-auto place-self-center lg:col-span-7">
                 <h1 class="mb-3 text-2xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white md:text-4xl">
-                    A clean, minimal starter for you sveltekit needs.
+                    A clean, minimal starter for your sveltekit needs.
                 </h1>
                 <p class="mb-6 text-gray-500 dark:text-gray-200">
                     Whether you are building a personal website, a blog, or a complex web application, this starter is a great place to start.
